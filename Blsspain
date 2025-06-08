@@ -1,0 +1,10 @@
+// هذا السكريبت يحمّل المحتوى دون تحديث كامل الصفحة
+setInterval(function() {
+    fetch(window.location.href)
+        .then(response => response.text())
+        .then(html => {
+            document.open();
+            document.write(html);
+            document.close();
+        });
+}, 5000);
